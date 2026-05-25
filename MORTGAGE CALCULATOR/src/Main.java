@@ -2,17 +2,19 @@ void main() {
     final byte numberOfMonthPerYear =12;
     final byte percetage = 100;
 
-    while(true){
-        System.out.println("Principal (1K - 1M):");
-        Scanner scanner = new Scanner(System.in);
-        int principal = scanner.nextInt();
-        if (scanner.nextInt() >= 1000 && scanner.nextInt() <= 1000000 ){
-            System.out.println("So principal is :" + principal);
-            break;
-        }else {
-            System.out.println("Incorrect input");
-        }
+    Scanner scanner = new Scanner(System.in);
 
-    }
+    System.out.println("Principal (1K - 1M):");
+    int principal = scanner.nextInt();
+    System.out.println("So principal is :" + principal);
 
+    System.out.println("Annual Interest Rate:");
+    float annualInterestRate = (float) scanner.nextFloat();
+    System.out.println("So annual Interest Rate is :" + annualInterestRate);
+
+    System.out.println("Period (Years)");
+    int period = scanner.nextInt();
+    System.out.println("So period is :" + period);
+
+    double
 }
