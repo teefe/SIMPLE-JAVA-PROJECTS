@@ -14,10 +14,11 @@ void main(String[] args) {
     System.out.println(mortgageCalculator(principal,monthlyInterestRate,numberOfPayments));
 }
 
-public double mortgageCalculator(int principal,double monthlyInterestRate,int numberOfPayments){
+public String mortgageCalculator(int principal,double monthlyInterestRate,int numberOfPayments){
     double numerator = monthlyInterestRate*Math.pow(1+monthlyInterestRate,numberOfPayments);
     double denominator = Math.pow(1+monthlyInterestRate,numberOfPayments) - 1;
-    return principal * (numerator/denominator);
+    NumberFormat mortgageFormat = NumberFormat.getCurrencyInstance();
+    return mortgageFormat.format(principal * (numerator/denominator));
 }
 
 public int clientInputPeriod(){
