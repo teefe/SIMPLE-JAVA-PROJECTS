@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 void main(String[] args) {
     final byte numberOfMonthPerYear =12;
     final byte percentage = 100;
@@ -11,7 +13,11 @@ void main(String[] args) {
 
     int numberOfPayments = numberOfMonthPerYear*period;
     double monthlyInterestRate =  annualInterestRate/ percentage /numberOfMonthPerYear;
+    System.out.println("MORTGAGE");
+    System.out.println("--------");
     System.out.println(mortgageCalculator(principal,monthlyInterestRate,numberOfPayments));
+    System.out.println("PAYMENT SCHEDULE");
+    System.out.println("-----------------");
 }
 
 public String mortgageCalculator(int principal,double monthlyInterestRate,int numberOfPayments){
