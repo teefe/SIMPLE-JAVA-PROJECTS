@@ -15,9 +15,19 @@ void main(String[] args) {
     double monthlyInterestRate =  annualInterestRate/ percentage /numberOfMonthPerYear;
     System.out.println("MORTGAGE");
     System.out.println("--------");
-    System.out.println(mortgageCalculator(principal,monthlyInterestRate,numberOfPayments));
+    System.out.println("Monthly Payments: " + mortgageCalculator(principal,monthlyInterestRate,numberOfPayments));
     System.out.println("PAYMENT SCHEDULE");
     System.out.println("-----------------");
+    paymentSchedule(monthlyInterestRate,numberOfPayments,principal);
+
+}
+public void paymentSchedule(double monthlyInterestRate, int numberOfPayments, int principal) {
+    int numberOfPaymentsMade = 1;
+    double numerator = (principal * (Math.pow(1+monthlyInterestRate,numberOfPayments) - Math.pow(1+monthlyInterestRate,numberOfPaymentsMade)));
+    double denominator = (Math.pow(1+monthlyInterestRate,numberOfPayments)-1);
+
+    double balance =  numerator/ denominator;
+    System.out.println("BALANCE: " + balance);
 }
 
 public String mortgageCalculator(int principal,double monthlyInterestRate,int numberOfPayments){
