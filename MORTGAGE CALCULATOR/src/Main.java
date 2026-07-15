@@ -23,11 +23,14 @@ void main(String[] args) {
 }
 public void paymentSchedule(double monthlyInterestRate, int numberOfPayments, int principal) {
     int numberOfPaymentsMade = 1;
-    double numerator = (principal * (Math.pow(1+monthlyInterestRate,numberOfPayments) - Math.pow(1+monthlyInterestRate,numberOfPaymentsMade)));
-    double denominator = (Math.pow(1+monthlyInterestRate,numberOfPayments)-1);
+    while (numberOfPaymentsMade <= numberOfPayments) {
+        double numerator = (principal * (Math.pow(1+monthlyInterestRate,numberOfPayments) - Math.pow(1+monthlyInterestRate,numberOfPaymentsMade)));
+        double denominator = (Math.pow(1+monthlyInterestRate,numberOfPayments)-1);
+        double balance =  numerator/ denominator;
+        System.out.println("BALANCE: " + balance);
+        numberOfPaymentsMade++;
+    }
 
-    double balance =  numerator/ denominator;
-    System.out.println("BALANCE: " + balance);
 }
 
 public String mortgageCalculator(int principal,double monthlyInterestRate,int numberOfPayments){
